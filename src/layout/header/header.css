@@ -1,0 +1,45 @@
+.header{
+    height: 100px;
+    font-weight: 400;
+    font-size: large;
+    background-color:#ffffff; /* Tailwind's bg-blue-800 */
+    color: white;
+    width: 100%;
+    text-align: center;
+    box-shadow: 10px 5px 5px rgba(64, 34, 34, 0.1);
+    display: flex;
+    align-items: center;
+    padding : 60px;
+    justify-content: space-between;
+}
+.logo{
+    height: 50px;
+    width: 100px;
+    margin-bottom: 20px;
+}
+nav{
+    display: flex;
+
+}
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+nav li{
+    margin: 0 20px;
+    font-size: medium;
+}
+nav a{
+    text-decoration: none;
+    color: #000000;
+}
+.header-inner{
+    display: flex;
+    justify-content: space-between;
+    
+}
