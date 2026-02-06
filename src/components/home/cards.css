@@ -1,4 +1,6 @@
 .cards {
+    background-color: #C2E1FCFC;
+    background-color: ;
     display: flex;
    margin: 100px 0;
     flex-wrap: wrap;
@@ -14,6 +16,7 @@
 }
 
 .card {
+    background-color: #ffffff;
     display: flex;
     width: calc(30% - 10px);
     flex-direction: column;
