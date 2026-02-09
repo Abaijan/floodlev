@@ -19,7 +19,7 @@
 }
 
 .header-inner {
- 
+  gap: 20vw;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -1,7 +1,7 @@
 
 import './hero.css'
 import logo from '../../assets/images/logo.svg'
-import heroVideo from '../../assets/video/videoplayback.1770564893487.publer.com.mp4'
+import heroVideo from '../../assets/video//4K ULTRA HD Rough mountain river Ambient Nature Atmosphere - 4К ULTRA HD Бурная горная река.mp4'
 const HeroBlock = () => {
     return (
         <div className="hero ">
