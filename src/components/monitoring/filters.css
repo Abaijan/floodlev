@@ -1,55 +1,79 @@
-.inner{
-    display: flex;
-    flex-direction: column;
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
-.inner h1{
-   margin:  100px auto;
-    font-weight: 300;
-    text-align: center;
-}
-.filters-box{
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 100%;
-}
-.filter{
-    padding: 8px 20px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin: 0 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-weight: 300;
-}
-.filter select{
-    padding: 8px 16px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    cursor: pointer;
 
+.inner h1 {
+  text-align: center;
+  font-weight: 300;
+  margin-top: 80px;
 }
-.filter button{
-    width: fit-content;
-    border-radius: 5px;
-    border: none;
-    background: #ffffff;
-    outline: none;
-    cursor: pointer;
-    color: #000000;
-    font-weight: 300;
 
+.filters-box {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
 }
-.filter input{
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    appearance: none;
-    
+
+/* карточка фильтра */
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 18px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* label */
+.filter label {
+  font-size: 14px;
+  color: #666;
+}
+
+/* input + select */
+.filter select,
+.filter input {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* кастомная стрелка */
+.filter select {
+  appearance: none;
+  background-image: url('../../assets/icons/arrowbuttom.svg');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+}
+
+/* focus */
+.filter select:focus,
+.filter input:focus {
+  border-color: #4c69c8;
+}
+
+/* ---------- АДАПТИВ ---------- */
+@media (max-width: 1200px) {
+  .filters-box {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .filters-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .filters-box {
+    grid-template-columns: 1fr;
+  }
 }

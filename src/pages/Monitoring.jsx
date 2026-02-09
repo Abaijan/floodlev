@@ -4,10 +4,10 @@ import Cards from '../components/monitoring/cards'
 import WaterLevelChart from '../components/monitoring/chart'
 export const Monitoring = () => {
   return (
-    <div className='home-page'>
+    <div className='monitoring-page'>
         <Filters/>
-        <Cards/>
-        <WaterLevelChart/>
+        {/* <Cards/> */}
+        {/* <WaterLevelChart/> */}
     </div>
   )
 }
