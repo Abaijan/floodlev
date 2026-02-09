@@ -22,7 +22,6 @@ ChartJS.register(
   Tooltip
 );
 
-// 🔹 начальные данные (как будто с API)
 const initialData = [
   { time: "2023-01-01T00:00:00Z", value: 20 },
   { time: "2023-02-04T00:00:00Z", value: 80 },
@@ -38,33 +37,31 @@ const initialData = [
   { time: "2023-12-21T00:00:00Z", value: 85 },
 ];
 
-const UPDATE_INTERVAL = 5000; 
+const UPDATE_INTERVAL = 300000;
 
 export default function WaterLevelChart() {
   const [points, setPoints] = useState(initialData);
 
-
- useEffect(() => {
-  const interval = setInterval(() => {
-    setPoints(prev => {
-      const newArr = [...prev];
-      newArr.pop(); 
-      newArr.unshift({
-        time: new Date().toISOString(),
-        value: Math.floor(Math.random() * 100),
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPoints(prev => {
+        const newArr = [...prev];
+        newArr.pop();
+        newArr.unshift({
+          time: new Date().toISOString(),
+          value: Math.floor(Math.random() * 100),
+        });
+        return newArr;
       });
-      return newArr;
-    });
-    console.log(points);
-    
-  }, UPDATE_INTERVAL);
+    }, UPDATE_INTERVAL);
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
+
   const data = {
     datasets: [
       {
-        data: points.map((p) => ({
+        data: points.map(p => ({
           x: p.time,
           y: p.value,
         })),
@@ -88,7 +85,7 @@ export default function WaterLevelChart() {
       tooltip: {
         displayColors: false,
         callbacks: {
-          label: (ctx) => `Уровень: ${ctx.parsed.y} м³`,
+          label: ctx => `Уровень: ${ctx.parsed.y} м³`,
         },
       },
     },
@@ -96,9 +93,7 @@ export default function WaterLevelChart() {
       x: {
         type: "time",
         adapters: {
-          date: {
-            locale: ru, 
-          },
+          date: { locale: ru },
         },
         time: {
           unit: "month",
@@ -113,7 +108,7 @@ export default function WaterLevelChart() {
         max: 100,
         ticks: {
           stepSize: 10,
-          callback: (v) => `${v} м³`,
+          callback: v => `${v} м³`,
         },
         grid: {
           color: "#EEEEEE",
@@ -124,7 +119,9 @@ export default function WaterLevelChart() {
 
   return (
     <div className="container">
-      <h3 className="chart-title">Уровень воды (обновление каждые 5 сек)</h3>
+      <h3 className="chart-title">
+        Уровень воды (обновление каждые 5 минут)
+      </h3>
       <div className="chart-box">
         <Line data={data} options={options} />
       </div>

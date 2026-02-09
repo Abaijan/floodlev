@@ -6,8 +6,8 @@ export const Monitoring = () => {
   return (
     <div className='monitoring-page'>
         <Filters/>
-        {/* <Cards/> */}
-        {/* <WaterLevelChart/> */}
+        <Cards/>
+        <WaterLevelChart/>
     </div>
   )
 }

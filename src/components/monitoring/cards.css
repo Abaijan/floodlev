@@ -1,80 +1,89 @@
+/* ===== Общие ===== */
 .cards {
-    background-color: #C2E1FCFC;
-    background-color: ;
+    margin: 100px 0;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* ===== Сетка ===== */
+.cards-box {
     display: flex;
-   margin: 100px 0;
     flex-wrap: wrap;
-    justify-content: space-between;
     gap: 20px;
 }
 
-.cards-box{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-}
-
+/* ===== Карточка ===== */
 .card {
-    background-color: #ffffff;
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+
     display: flex;
-    width: calc(30% - 10px);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 20px;
+
     border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin: 0 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
     font-weight: 300;
 }
-
-.card h5 {
-    margin: 10px 0;
-    font-weight: 300;
-}
-
-.card p {
-    margin: 10px 0;
-    font-weight: 300;
-}   
 
 .card h1 {
+    font-size: 48px;
     margin: 10px 0;
-    font-weight: 300;
 }
 
-.card hr {
-    margin: 10px 0;
-    width: 100%;
-    border: none;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+.card h5,
+.card p {
+    margin: 6px 0;
 }
 
-.card .month {
-    margin: 10px 0;
-    font-weight: 300;
-}
-
-.card .title {
-    margin: 10px 0;
-    font-weight: 300;
-}
-
-.card .base-info {
-    font-size: small;
-    margin: 10px 0;
+/* ===== Блок с месяцами ===== */
+.base-info {
     display: flex;
     gap: 20px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    margin-top: 15px;
 }
 
-.base-info .last{
-    font-size: large;
-    font-weight: bold;
+.columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+}
+
+.columns hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    margin: 6px 0;
+}
+
+.columns.last {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 992px) {
+    .card {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        flex: 1 1 100%;
+    }
+
+    .base-info {
+        flex-direction: column;
+    }
 }
