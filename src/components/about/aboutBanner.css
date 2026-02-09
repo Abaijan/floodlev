@@ -1,0 +1,103 @@
+.about-banner {
+  margin: 120px 0;
+  overflow: hidden;
+}
+
+/* layout */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* ----------------- НАЧАЛЬНОЕ СОСТОЯНИЕ ----------------- */
+.banner-info,
+.why-image {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ----------------- АКТИВНОЕ СОСТОЯНИЕ ----------------- */
+.about-banner.show .banner-info {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.1s;
+}
+
+.about-banner.show .why-image {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+/* ----------------- ТЕКСТ ----------------- */
+.banner-info {
+  flex: 1;
+  max-width: 680px;
+}
+
+.banner-info h1 {
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.banner-info p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* ----------------- КАРТИНКА ----------------- */
+.why-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.why-image img {
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.6s ease;
+}
+
+.why-image img:hover {
+  transform: scale(1.04);
+}
+
+/* ----------------- АДАПТИВ ----------------- */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-info h1 {
+    font-size: 2.6rem;
+  }
+
+  .banner-info p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-banner {
+    margin: 80px 0;
+  }
+
+  .banner-info h1 {
+    font-size: 2.2rem;
+    text-align: left;
+  }
+
+  .banner-info p {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+}

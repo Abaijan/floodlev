@@ -1,0 +1,76 @@
+.about-home {
+  width: 100%;
+  min-height: 100vh;
+  padding: 150px 20px;
+  margin: 0 auto;
+  background-color: #C6F0FA;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-out;
+}
+
+.about-home.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-home h1 {
+  font-size: 46px;
+  color: #4C69C8;
+  margin: 0 auto 70px auto;
+  text-align: center;
+}
+
+.about-home p {
+  color: #666;
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  margin: 0 auto;
+  max-width: 900px;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+/* Адаптивка */
+/* Планшеты */
+@media (max-width: 1024px) {
+  .about-home {
+    padding: 120px 20px;
+  }
+  .about-home h1 {
+    font-size: 38px;
+    margin-bottom: 50px;
+  }
+  .about-home p {
+    font-size: 20px;
+  }
+}
+
+/* Смартфоны */
+@media (max-width: 767px) {
+  .about-home {
+    padding: 100px 15px;
+  }
+  .about-home h1 {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  .about-home p {
+    font-size: 18px;
+  }
+}
+
+/* Малые устройства */
+@media (max-width: 480px) {
+  .about-home {
+    padding: 80px 10px;
+  }
+  .about-home h1 {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+  .about-home p {
+    font-size: 16px;
+  }
+}

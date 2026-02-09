@@ -1,0 +1,90 @@
+.goal {
+    padding: 120px 0;
+    background-color: #f9f9f9;
+    font-family: 'Times New Roman', serif;
+}
+
+.goal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Заголовок */
+.goal-info h1 {
+    font-size: 66px;
+    color: #4C69C8;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Основная линия */
+.line {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Текст */
+.texts {
+    flex: 1;
+}
+
+.texts p {
+    color: #666;
+    font-size: 36px;
+    line-height: 1.6;
+    letter-spacing: 1.3px;
+}
+
+/* Картинка */
+.banner-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.banner-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+/* 📱 Планшеты */
+@media (max-width: 1024px) {
+    .line {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .texts p {
+        font-size: 28px;
+    }
+
+    .goal-info h1 {
+        font-size: 48px;
+    }
+}
+
+/* 📱 Мобилки */
+@media (max-width: 576px) {
+    .goal {
+        padding: 80px 0;
+    }
+
+    .goal-info h1 {
+        font-size: 36px;
+    }
+
+    .texts p {
+        font-size: 20px;
+    }
+
+    .banner-image img {
+        width: 100%;
+        max-width: 300px;
+    }
+}

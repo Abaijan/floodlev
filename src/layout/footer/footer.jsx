@@ -3,7 +3,6 @@ import logo from '../../assets/images/logo.svg'
 const footer = () => {
     return (
         <footer className="footer">
-            <div className="container">
                 <div className="footer-content">
                     <div className="footer-logo">
                         <img src={logo} alt="FloodLev Logo" />
@@ -22,7 +21,7 @@ const footer = () => {
                             <a href='tel:+996222416854'>+996222416854</a>
                             <a href="mailto:fghf09647@gmail.com">fghf09647@gmail.com</a>
                         </div>
-                        <div className="socials">
+                        <div className="tg-column">
                             <div className="tg">
 
                             <p>Telegram:</p>
@@ -32,7 +31,6 @@ const footer = () => {
                         </div>
                     </div>
                 </div>
-            </div>
             <div className="under-footer">
                 <p>© Created by Aqua Nomad in 2026</p>
             </div>

@@ -1,0 +1,90 @@
+.partners {
+    min-height: 70vh;
+    margin: 0 auto;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+.partners.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.partners h1 {
+    font-size: 46px;
+    color: #4C69C8;
+    text-align: center;
+    margin: 0 auto 40px auto;
+}
+
+.marq {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    gap: 80px; /* расстояние между логотипами */
+}
+
+.marq-item img {
+    width: 120px;
+    height: auto;
+    margin-left: 300px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.marq-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Адаптивка */
+/* Планшеты */
+@media (max-width: 1024px) {
+    .partners h1 {
+        font-size: 38px;
+    }
+    .marq {
+        gap: 60px;
+    }
+    .marq-item img {
+        width: 100px;
+    }
+}
+
+/* Смартфоны */
+@media (max-width: 767px) {
+    .partners {
+        padding: 80px 15px;
+    }
+    .partners h1 {
+        font-size: 32px;
+    }
+    .marq {
+        gap: 40px;
+    }
+    .marq-item img {
+        width: 80px;
+    }
+}
+
+/* Малые устройства */
+@media (max-width: 480px) {
+    .partners {
+        padding: 150px 10px;
+        height: 50vh;
+    }
+    .partners h1 {
+        font-size: 26px;
+    }
+    .marq {
+        gap: 30px;
+    }
+    .marq-item img {
+        margin-left: 20vw;
+        width: 100px;
+    }
+}

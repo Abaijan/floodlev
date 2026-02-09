@@ -1,15 +1,69 @@
-.home-page {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.about{
-           background: #060809 url('/src/assets/images/bg-about.jpg') no-repeat center center/cover;
-    filter: brightness(0.9);
+.container{max-width: 1400px; margin: 0 auto;}
+.home-page {
+
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+.about-page {
+        padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #BFEBFF;
+}
+.home-page .sect-last {
+    position: relative; /* важно для ::before */
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    background-image: url('/src/assets/images/pexels-emrecan-2189711.jpg');
+  
+    height: 200vh; /* блок на весь экран */
+}
+
+.home-page .sect-last::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2); /* затемнение */
+    z-index: 1;
+}
+
+.home-page .sect-last > * {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 480px) {
+    .container{
+        padding: 0 15px;
+        width: 100%;
+    }
+}
+
+.contacts {
+    position: relative;
+    background: url('/src/assets/images/bg-about.jpg') no-repeat center / cover;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); /* затемнение */
+    z-index: 1;
+}
+
+.contacts > * {
+    position: relative;
+    z-index: 2;
 }

@@ -1,0 +1,126 @@
+.form {
+  color: #e0f0ff;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  background-color: #0d1f2a; /* можно фон добавить */
+  font-family: 'Times New Roman', serif;
+  text-align: center;
+}
+
+.form h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 auto 20px;
+  color: #4fc3f7;
+  text-shadow: 0 0 20px rgba(79, 195, 247, 0.35);
+}
+
+.form p {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #ffffff;
+  margin: 0 auto 40px;
+  max-width: 700px;
+}
+
+/* Форма */
+.contact-form {
+  border-radius: 10px;
+  padding: 40px 70px;
+  margin: 0 auto;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px); /* стиль glassmorphism */
+}
+
+/* Поля */
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1rem;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4fc3f7;
+  outline: none;
+  transform: scale(1.02);
+}
+
+/* Текстовое поле */
+.contact-form textarea {
+  resize: vertical;
+  min-height: 140px;
+  background-image: url('/src/assets/images/logo.svg');
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+/* Кнопка */
+.contact-form button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #4fc3f7;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.contact-form button:hover {
+  background: #0288d1;
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 1024px) {
+  .contact-form {
+    width: 90%;
+    padding: 30px 40px;
+  }
+
+  .form h2 {
+    font-size: 2.5rem;
+  }
+
+  .form p {
+    font-size: 1.3rem;
+  }
+}
+
+/* 📱 Телефоны */
+@media (max-width: 576px) {
+  .contact-form {
+    width: 100%;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .form h2 {
+    font-size: 2rem;
+  }
+
+  .form p {
+    font-size: 1rem;
+  }
+
+  .contact-form textarea {
+    min-height: 120px;
+  }
+
+  .contact-form button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}

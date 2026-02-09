@@ -1,0 +1,47 @@
+.technology {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+    height: 60vh;
+}
+
+
+.technology.animate {
+    opacity: 1;
+    transform: translateY(0);
+    height: 70vh;
+}
+
+.technology h1 {
+    margin: 0 auto;
+    padding-top: 140px;
+    font-size: 46px;
+    color: #4C69C8;
+    text-align: center;
+}
+
+.gallery {
+    width: 100%;
+}
+@media (max-width: 1024px) {
+    .technology h1 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 767px) {
+    .technology h1 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .technology h1 {
+        font-size: 26px;
+    }
+}

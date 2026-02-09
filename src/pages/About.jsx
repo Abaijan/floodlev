@@ -1,11 +1,16 @@
 import React from 'react'
-import AboutCommand from '../components/about/about'
-import Socials from '../components/about/cosials'
+import AboutBanner from '../components/about/AboutBanner'
+import Why from '../components/about/Why'
+import Works from '../components/about/Works'
+import  Goal  from '../components/about/Goal'
+
 export const About = () => {
   return (
-    <div className='about'>
-      <AboutCommand />
-      <Socials />
+    <div className='about-page'>
+        <AboutBanner/>
+        <Why/>
+        <Works/>
+        <Goal/>
     </div>
   )
 }

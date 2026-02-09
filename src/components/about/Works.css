@@ -1,0 +1,57 @@
+.works {
+  margin: 150px 0;
+}
+
+.works-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+}
+
+/* Заголовок */
+.works-info h1 {
+  font-size: 46px;
+  color: #4C69C8;
+}
+
+/* Картинка */
+.works-info img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Текст */
+.works-info p {
+  font-size: 22px;
+  color: #666;
+  line-height: 1.6;
+  max-width: 900px;
+}
+
+/* 📱 Планшеты */
+@media (max-width: 992px) {
+  .works-info h1 {
+    font-size: 38px;
+  }
+
+  .works-info p {
+    font-size: 20px;
+  }
+}
+
+/* 📱 Телефоны */
+@media (max-width: 576px) {
+  .works {
+    margin: 100px 0;
+  }
+
+  .works-info h1 {
+    font-size: 30px;
+  }
+
+  .works-info p {
+    font-size: 18px;
+  }
+}

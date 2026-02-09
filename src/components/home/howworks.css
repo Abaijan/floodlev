@@ -1,0 +1,102 @@
+.how-works {
+    position: relative;
+    padding: 150px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background: url('/src/assets/images/nature.jpeg') no-repeat center / cover;
+}
+
+.how-works::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.how-works > * {
+    position: relative;
+    z-index: 2;
+}
+
+.how-works h1 {
+    font-size: 46px;
+    margin: 0 auto 50px auto;
+    color: #f9f9f9;
+    text-align: center;
+}
+
+/* карточки */
+.how-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.how-card {
+    gap: 20px;
+    width: 400px;
+    min-height: 200px;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.3);
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.how-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.how-card p {
+    font-size: 18px;
+}
+
+/* Адаптивка */
+/* Планшеты */
+@media (max-width: 1024px) {
+    .how-card {
+        width: 300px;
+    }
+    .how-works h1 {
+        font-size: 38px;
+    }
+}
+
+/* Смартфоны */
+@media (max-width: 767px) {
+    .how-card {
+        width: 90%;
+        flex-direction: column;
+        text-align: center;
+    }
+    .how-card img {
+        margin-bottom: 15px;
+    }
+    .how-works h1 {
+        font-size: 32px;
+    }
+}
+
+/* Малые устройства */
+@media (max-width: 480px) {
+    .how-works {
+        padding: 80px 10px;
+    }
+    .how-works h1 {
+        font-size: 26px;
+    }
+    .how-card p {
+        font-size: 16px;
+    }
+}

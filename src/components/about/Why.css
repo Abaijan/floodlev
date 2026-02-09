@@ -1,0 +1,91 @@
+.why {
+  padding: 120px 0;
+}
+
+/* Карточка */
+.why-info {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 80px 40px;
+}
+
+/* Заголовок */
+.why-info h1 {
+  font-size: 46px;
+  color: #4C69C8;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* Основная линия */
+.line {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Текст */
+.texts {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.texts p {
+  color: #666;
+  font-size: 22px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+/* Картинка */
+.banner-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 📱 Планшеты */
+@media (max-width: 1024px) {
+  .line {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .texts {
+    text-align: center;
+  }
+
+  .why-info h1 {
+    font-size: 38px;
+  }
+
+  .texts p {
+    font-size: 20px;
+  }
+}
+
+/* 📱 Телефоны */
+@media (max-width: 576px) {
+  .why {
+    padding: 80px 0;
+  }
+
+  .why-info {
+    padding: 50px 20px;
+  }
+
+  .why-info h1 {
+    font-size: 28px;
+  }
+
+  .texts p {
+    font-size: 18px;
+  }
+}
