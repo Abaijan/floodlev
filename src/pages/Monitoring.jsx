@@ -4,7 +4,7 @@ import Cards from '../components/monitoring/cards';
 import WaterLevelChart from '../components/monitoring/chart';
 import WaterLevelHeatmap from '../components/monitoring/heatmap';
 
-const UPDATE_INTERVAL = 3000;
+const UPDATE_INTERVAL = 30000;
 
 const initialData = [
   { x: 1, value: 20 },
