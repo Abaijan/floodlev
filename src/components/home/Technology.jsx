@@ -22,11 +22,9 @@ const Technology = () => {
 
   return (
     <div className={`technology ${isVisible ? 'animate' : ''}`} ref={ref}>
-        <div className="container">
             <h1>Технология наших датчиков :</h1>
             <div className="gallery">
                 <Gallery />
-            </div>
         </div>
     </div>
   )

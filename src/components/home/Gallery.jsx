@@ -25,10 +25,11 @@ export default function Gallery() {
       autoplay={{ delay: 2000, disableOnInteraction: false }}
       className="arc-swiper"
       breakpoints={{
-        480: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 }
+        0: { slidesPerView: 1 },      // телефоны
+        768: { slidesPerView: 2 },    // планшеты
+        1024: { slidesPerView: 3 },   // десктоп
       }}
+
     >
       {slides.map((slide, i) => (
         <SwiperSlide key={i}>

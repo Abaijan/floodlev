@@ -22,56 +22,26 @@ ChartJS.register(
   Tooltip
 );
 
-const initialData = [
-  { time: "2023-01-01T00:00:00Z", value: 20 },
-  { time: "2023-02-04T00:00:00Z", value: 80 },
-  { time: "2023-03-05T00:00:00Z", value: 30 },
-  { time: "2023-04-01T00:00:00Z", value: 40 },
-  { time: "2023-05-06T00:00:00Z", value: 60 },
-  { time: "2023-06-01T00:00:00Z", value: 55 },
-  { time: "2023-07-01T00:00:00Z", value: 80 },
-  { time: "2023-08-30T00:00:00Z", value: 70 },
-  { time: "2023-09-11T00:00:00Z", value: 10 },
-  { time: "2023-10-01T00:00:00Z", value: 30 },
-  { time: "2023-11-04T00:00:00Z", value: 70 },
-  { time: "2023-12-21T00:00:00Z", value: 85 },
-];
 
-const UPDATE_INTERVAL = 300000;
+const UPDATE_INTERVAL = 3000;
 
-export default function WaterLevelChart() {
-  const [points, setPoints] = useState(initialData);
+export default function WaterLevelChart( { points }) {
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPoints(prev => {
-        const newArr = [...prev];
-        newArr.pop();
-        newArr.unshift({
-          time: new Date().toISOString(),
-          value: Math.floor(Math.random() * 100),
-        });
-        return newArr;
-      });
-    }, UPDATE_INTERVAL);
+ const data = {
+  datasets: [
+    {
+      data: points.map(p => ({
+        x: p.x, // <-- теперь число
+        y: p.value,
+      })),
+      borderColor: "#2BF8D6",
+      borderWidth: 5,
+      tension: 0.45,
+      pointRadius: 0,
+    },
+  ],
+};
 
-    return () => clearInterval(interval);
-  }, []);
-
-  const data = {
-    datasets: [
-      {
-        data: points.map(p => ({
-          x: p.time,
-          y: p.value,
-        })),
-        borderColor: "#2BF8D6",
-        borderWidth: 5,
-        tension: 0.45,
-        pointRadius: 0,
-      },
-    ],
-  };
 
   const options = {
     responsive: true,
@@ -91,17 +61,15 @@ export default function WaterLevelChart() {
     },
     scales: {
       x: {
-        type: "time",
+        type: "linear",
         adapters: {
           date: { locale: ru },
         },
-        time: {
-          unit: "month",
-          displayFormats: {
-            month: "LLLL",
-          },
-        },
-        grid: { display: false },
+         grid: { display: false },
+  title: {
+    display: true,
+    text: "Время (порядковые числа)",
+  },
       },
       y: {
         min: 0,
